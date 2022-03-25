@@ -1,0 +1,66 @@
+case 2:
+	do{
+	 int numero,sorte,chance;
+	
+    char s;
+    srand(time(NULL));
+    sorte = rand() % 1001;
+    chance=1;
+    
+    	
+	    printf("\nAdivinhe o numero entre 0 e 1000\n");
+	  
+	    
+	    
+    do
+	{
+	    printf(" \n    numero de chances \n          >%d<\n", chance);
+		printf("\nDigite um numero.\n>>");	
+    	scanf("%d", &numero);
+    	
+    	if(numero > sorte)
+		{ 
+		    
+			printf(" >Tente um numero MENOR que %d\n", numero);  
+			
+	    }
+		else 
+		{
+			if(numero < sorte)       
+			                                                
+                printf(">Tente um numero MAIOR que %d\n", numero);
+                
+            else
+			{
+				
+                printf("voce acertou!!O número era: %d", sorte);
+			}    
+			
+		}
+		
+		chance++;
+			
+    } 
+    while (numero != sorte && chance <= 5);
+    
+    if (chance> 5) 
+	{
+    printf("\n\nSuas chances acabaram!!");
+    printf("O numero era:%d\n", sorte);
+    
+    
+    }
+    
+        
+   	printf("\n///////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\."); 
+	printf("\n1 para retornar ao menu\n2 para jogar novamente\n\n");
+   	scanf("%d", &retorno);
+    
+    
+    if(retorno == 1)
+	{
+		return main();
+	}
+		
+	}while(retorno != 1);
+	break;
